@@ -14,7 +14,6 @@ class App extends React.Component {
   componentDidMount() {
     axios.get("https://api.github.com/users/Kat2bk")
     .then(response => {
-      console.log("This is the data", response.data)
       this.setState({ user: response.data})
     })
     .catch(error => {
@@ -28,7 +27,7 @@ class App extends React.Component {
       <div className="App-container">
       <h1>GitHub Users</h1>
       <h2>Let's Git Crazy!</h2>
-      <UserCard />
+      <UserCard userData={this.state.user}/>
       </div>
     )
   }
