@@ -39,7 +39,7 @@ class UserCard extends React.Component {
             <div className="info">
             <h2>{this.props.userData.name}</h2>
             <h3>{this.props.userData.bio}</h3>
-           <a href={`click here: ${this.props.userData.html_url}`}><button className="btn-user">Github</button></a>
+           <a href={this.props.userData.html_url}><button className="btn-user">Github</button></a>
             </div>
             </div>
             <div className="usercard-followers">

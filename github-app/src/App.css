@@ -16,7 +16,8 @@
 .usercard img {
   margin: 20px;
   border-radius: 50%;
-
+  width: 30%;
+  max-width: 50%
 }
 
 .App-text {
@@ -67,7 +68,7 @@
 }
 
 .followerbox img {
-  width: 150px;
+  width: 90%;
   margin-top: 10px;
   opacity: 0.7;
 }
