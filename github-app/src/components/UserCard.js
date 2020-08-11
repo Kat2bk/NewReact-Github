@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
-import {DiGithubFull} from "react-icons/di";
 import Followers from "./Followers";
+import "../App.css";
 
 class UserCard extends React.Component {
     constructor(props) {
@@ -24,11 +24,23 @@ class UserCard extends React.Component {
     render() {
         return (
             <div className="usercard-container">
+            <div className="App-text">
+            <h1>Github Mania</h1>
+            <h2>Let's Git Crazy</h2>
+            <section className="search-text">
+            <form>
+            <input className="input-text" type="text" />
+            <button type="submit">Search</button>
+            </form>
+            </section>
+            </div>
             <div className="usercard">
-            <img className="card-picture" src={this.props.userData.avatar_url}/>
+            <img className="card-picture" width="30%" src={this.props.userData.avatar_url}/>
+            <div className="info">
             <h2>{this.props.userData.name}</h2>
             <h3>{this.props.userData.bio}</h3>
-            <a href={`click here: ${this.props.userData.html_url}`}><DiGithubFull /></a>
+           <a href={`click here: ${this.props.userData.html_url}`}><button className="btn-user">Github</button></a>
+            </div>
             </div>
             <div className="usercard-followers">
             <Followers followerData={this.state.followers}/>

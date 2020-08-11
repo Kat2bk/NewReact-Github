@@ -25,8 +25,6 @@ class App extends React.Component {
   render() {
     return (
       <div className="App-container">
-      <h1>GitHub Users</h1>
-      <h2>Let's Git Crazy!</h2>
       <UserCard userData={this.state.user}/>
       </div>
     )

@@ -2,6 +2,187 @@
   text-align: center;
 }
 
-.App-container h2 {
-  margin-top: -15px;
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
 }
+
+.App-container h2 {
+  margin-top: -10px;
+}
+
+.usercard img {
+  margin: 20px;
+  border-radius: 50%;
+
+}
+
+.App-text {
+  background-color: #1B3653;
+  padding: 15px;
+  color: white;
+}
+
+.usercard {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: #1B3653;
+}
+
+.info {
+  margin: 0 auto;
+  color: white;
+  font-size: 20px;
+}
+
+.info h2 {
+  color: orange;
+}
+
+.btn-user {
+  background-color: transparent;
+  border: 1.3px solid green;
+  border-radius: 20px;
+  width: 120px;
+  font-size: 20px;
+  margin: 20px;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.usercard-followers {
+  background-color: lightgrey;
+}
+
+.followers-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 10px 10px;
+  grid-template-areas: ". . ." ". . ." ". . .";
+}
+
+.followerbox img {
+  width: 150px;
+  margin-top: 10px;
+  opacity: 0.7;
+}
+
+.followerbox img:hover {
+  opacity: 10;
+}
+
+.followerbox p {
+  font-size: 20px;
+  margin: 10px;
+  margin-bottom: -5px;
+  color: grey;
+}
+
+.followerbox a {
+  font-size: 60px;
+  color: green;
+}
+
+.followerbox a:hover {
+  color: black;
+}
+
+.followerbox {
+  background-color: white;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  padding: 5px;
+  margin-top: 20px;
+  border: 1px solid grey;
+}
+
+
+
+.search-text form {
+  background: orange;
+	border-radius: 5px;
+	box-shadow: inset 0 0 0 1px #272727;
+	display: inline-block;
+  font-size: 0px;
+  margin: 20px;
+	padding: 20px;
+	z-index: 1;
+}
+
+.search-text input {	
+    border: 1px solid #444;
+    border-radius: 5px 0 0 5px;
+    display: block;
+    float: left;
+    font-size: 14px;
+    height: 40px;
+    margin: 0;
+    padding: 0 10px;
+    width: 200px;
+    background-color: #444;
+    color: white;
+}
+
+.search-text input:focus {
+  animation: glow 800ms ease-out infinite alternate;
+	background: #444;
+	border-color: #393;
+	box-shadow: 0 0 5px rgba(0,255,0,.2), inset 0 0 5px rgba(0,255,0,.1), 0 2px 0 #000;
+	color: #efe;
+	outline: none;
+}
+
+.search-text button {
+  background: #222;
+	background: linear-gradient(#333, #222);
+	box-sizing: border-box;
+	border: 1px solid #444;
+	border-left-color: #000;
+	border-radius: 0 5px 5px 0;
+	color: #fff;
+	display: block;
+	float: left;
+	font-size: 14px;
+	font-weight: 400;
+	height: 40px;
+	line-height: 40px;
+	text-shadow: 0 -1px 0 #000;
+	width: 80px;
+}
+
+.search-text button:hover,
+.search-text button:focus {
+	background: #292929;
+	background: linear-gradient(#393939, #292929);
+	color: #5f5;
+	outline: none;
+}
+
+.search-text button:active {
+	background: #292929;
+	background: linear-gradient(#393939, #292929);
+	box-shadow: 0 1px 0 #000, inset 1px 0 1px #222;
+	top: 1px;
+}
+
+@keyframes glow {
+  0% {
+  border-color: #393;
+  box-shadow: 0 0 5px rgba(0,255,0,.2), inset 0 0 5px rgba(0,255,0,.1), 0 2px 0 #000;
+  }	
+  100% {
+  border-color: #6f6;
+  box-shadow: 0 0 20px rgba(0,255,0,.6), inset 0 0 10px rgba(0,255,0,.4), 0 2px 0 #000;
+  }
+}
+
+
+
+
+
