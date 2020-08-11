@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import {DiGithubFull} from "react-icons/di";
+import Followers from "./Followers";
 
 class UserCard extends React.Component {
     constructor(props) {
@@ -13,7 +14,7 @@ class UserCard extends React.Component {
     componentDidMount() {
         axios.get("https://api.github.com/users/Kat2bk/followers")
         .then(response => {
-            console.log("data from followers api", response)
+            this.setState({ followers: response.data})
         })
         .catch(error => {
             console.log("unable to access data", error)
@@ -30,7 +31,7 @@ class UserCard extends React.Component {
             <a href={`click here: ${this.props.userData.html_url}`}><DiGithubFull /></a>
             </div>
             <div className="usercard-followers">
-            {}
+            <Followers followerData={this.state.followers}/>
             </div>
             </div>
         )
