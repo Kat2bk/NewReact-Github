@@ -20,6 +20,13 @@ class App extends React.Component {
     .catch(error => {
       console.log("Unable to grab data", error)
     })
+    axios.get(`https://api.github.com/users/${this.state.username}/followers`)
+    .then(response => {
+        this.setState({ followers: response.data})
+    })
+    .catch(error => {
+        console.log("unable to access data", error)
+    })
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -30,6 +37,14 @@ class App extends React.Component {
     })
     .catch(error => {
       console.log("Unable to grab data", error)
+    })
+    axios.get(`https://api.github.com/users/${this.state.username}/followers`)
+    .then(response => {
+        console.log("response from UPdate", response)
+        this.setState({ followers: response.data})
+    })
+    .catch(error => {
+        console.log("unable to access data", error)
     })
   }
 }

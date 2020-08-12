@@ -14,7 +14,6 @@ class UserForm extends React.Component {
     }
 
     handleSubmit = (event) => {
-        console.log("this is from the handleSubmit", this.state.username)
         event.preventDefault();
         this.props.handleChangeUser(this.state.username);
     }

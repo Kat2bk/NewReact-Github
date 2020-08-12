@@ -6,11 +6,12 @@ import "../App.css";
 
 class UserCard extends React.Component {
     constructor(props) {
-        console.log(props)
         super(props);
         this.state = {
             followers: [],
-            bool: false
+            bool: false,
+            user: {},
+            username: "Kat2bk"
         }
     }
 
@@ -26,10 +27,9 @@ class UserCard extends React.Component {
 
     componentDidUpdate(prevProps, prevState) {
         if(prevState.username !== this.state.username) {
-            console.log("componmentDidUpdate", this.state.username)
         axios.get(`https://api.github.com/users/${this.state.username}/followers`)
         .then(response => {
-            console.log("response from UPdate", response)
+            console.log("response from Update", response.data)
             this.setState({ followers: response.data})
         })
         .catch(error => {
@@ -59,7 +59,6 @@ class UserCard extends React.Component {
             <h3>{this.props.userData.bio}</h3>
            <a href={this.props.userData.html_url}><button className="btn-user">Github</button></a>
             </div>
-
             </div>
 
             <button className="btn-follower" onClick={() =>  this.setState({bool: !this.state.bool})}>View Followers</button>

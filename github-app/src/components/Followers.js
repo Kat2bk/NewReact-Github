@@ -3,6 +3,7 @@ import {DiGithubFull} from "react-icons/di";
 import "../App.css";
 
 const Followers = ({followerData, boolean}) => {
+    console.log(followerData)
     return (
         <div className="followers-container">
         {boolean ? followerData.slice(0, 12).map(follower => (
