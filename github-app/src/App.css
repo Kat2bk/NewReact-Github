@@ -17,7 +17,10 @@
   margin: 20px;
   border-radius: 50%;
   width: 30%;
-  max-width: 50%
+  max-width: 50%;
+  margin-bottom: 40px;
+  margin-left: 50px;
+  border: 2px solid white;
 }
 
 .App-text {
@@ -31,12 +34,13 @@
   align-items: center;
   width: 100%;
   background-color: #1B3653;
+  justify-content: space-evenly;
 }
 
 .info {
-  margin: 0 auto;
   color: white;
   font-size: 20px;
+  padding: 10px;
 }
 
 .info h2 {
@@ -181,6 +185,18 @@
   border-color: #6f6;
   box-shadow: 0 0 20px rgba(0,255,0,.6), inset 0 0 10px rgba(0,255,0,.4), 0 2px 0 #000;
   }
+}
+
+.btn-follower {
+  background-color: orange;
+  border: none;
+  border-radius: 20px;
+  width: 200px;
+  font-size: 20px;
+  margin: 20px;
+  color: white;
+  padding: 15px;
+  cursor: pointer;
 }
 
 

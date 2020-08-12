@@ -1,13 +1,15 @@
 import React from "react";
 import axios from "axios";
 import Followers from "./Followers";
+import Form from "./Form";
 import "../App.css";
 
 class UserCard extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            followers: []
+            followers: [],
+            bool: false
         }
     }
 
@@ -27,12 +29,7 @@ class UserCard extends React.Component {
             <div className="App-text">
             <h1>Github Mania</h1>
             <h2>Let's Git Crazy</h2>
-            <section className="search-text">
-            <form>
-            <input className="input-text" type="text" />
-            <button type="submit">Search</button>
-            </form>
-            </section>
+            <Form />
             </div>
             <div className="usercard">
             <img className="card-picture" width="30%" src={this.props.userData.avatar_url}/>
@@ -42,8 +39,9 @@ class UserCard extends React.Component {
            <a href={this.props.userData.html_url}><button className="btn-user">Github</button></a>
             </div>
             </div>
+            <button className="btn-follower" onClick={() =>  this.setState({bool: !this.state.bool})}>View Followers</button>
             <div className="usercard-followers">
-            <Followers followerData={this.state.followers}/>
+            <Followers followerData={this.state.followers} boolean={this.state.bool}/>
             </div>
             </div>
         )
