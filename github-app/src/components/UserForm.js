@@ -1,7 +1,7 @@
 import React from "react";
 import "../App.css";
 
-class Form extends React.Component {
+class UserForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -14,16 +14,17 @@ class Form extends React.Component {
     }
 
     handleSubmit = (event) => {
+        console.log("this is from the handleSubmit", this.state.username)
         event.preventDefault();
-
+        this.props.handleChangeUser(this.state.username);
     }
 
     render() {
         return (
             <div>
             <section className="search-text">
-            <form>
-            <input className="input-text" type="text" name="users" onChange={this.handleChange} />
+            <form onSubmit={this.handleSubmit}>
+            <input className="input-text" type="text" name="username" onChange={this.handleChange} placeholder="Enter Username"/>
             <button type="submit">Search</button>
             </form>
             </section>
@@ -32,4 +33,4 @@ class Form extends React.Component {
     }
 }
 
-export default Form;
+export default UserForm;
