@@ -7,11 +7,12 @@ import "../App.css";
 class UserCard extends React.Component {
     constructor(props) {
         super(props);
+        console.log("props from userCard", props)
         this.state = {
             followers: [],
             bool: false,
-            user: {},
-            username: "Kat2bk"
+            user: props.user,
+            username: props.username
         }
     }
 
@@ -38,6 +39,13 @@ class UserCard extends React.Component {
     }
 }
 
+    componentWillReceiveProps(nextProps) {
+            console.log("componentWillReceiveProps", nextProps)
+            if(this.props !== nextProps) {
+                this.setState(nextProps)
+            }
+    }
+
     render() {
         return (
             <div className="usercard-container">
@@ -47,7 +55,7 @@ class UserCard extends React.Component {
             <h1>Github Mania</h1>
             <h2>Let's Git Crazy</h2>
 
-            <UserForm handleChangeUser={this.props.handleChangeUser}/>
+            <UserForm handleChangeUser={this.props.handleChangeUser} handleChangeFollowers={this.handleChangeFollowers}/>
             </div>
 
 
