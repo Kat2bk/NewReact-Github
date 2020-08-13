@@ -57,7 +57,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App-container">
-      <UserCard userData={this.state.user} handleChangeUser={this.handleChangeUser}/>
+      <UserCard userData={this.state.user} username={this.state.username} handleChangeUser={this.handleChangeUser}/>
       </div>
     )
   }
